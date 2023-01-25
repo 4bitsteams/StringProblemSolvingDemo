@@ -163,6 +163,20 @@ namespace ProblemSolvingDemoTwo
         }
 
 
+        public static void GetFirstCharForEachWord(string inputString)
+        {
+            if (!string.IsNullOrEmpty(inputString))
+            {
+                string[] array = inputString.Split(' ');
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.Write(array[i].Substring(0, 1).ToUpper() + " ");
+                }
+            }
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine(FindDublicate("aaabbbcccddd"));
@@ -173,7 +187,8 @@ namespace ProblemSolvingDemoTwo
             Console.WriteLine(CheckPalindrome("madam"));
             Console.WriteLine(CheckMaxOccuranceOfChar("Hello Wwwwworld!"));
             GetPossibleSubstring("abcdef");
-            Console.WriteLine("Hello World!");
+            GetFirstCharForEachWord("i love bangladesh");
+            Console.ReadKey();
         }
     }
 }
