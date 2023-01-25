@@ -146,6 +146,23 @@ namespace ProblemSolvingDemoTwo
         }
 
 
+
+
+        public static void GetPossibleSubstring(string inputSting)
+        {
+            if (!string.IsNullOrEmpty(inputSting))
+            {
+                for (int i = 0; i < inputSting.Length; i++)
+                {
+                    for (int j = 0; j < inputSting.Length - i; j++)
+                    {
+                        Console.WriteLine(inputSting.Substring(i, j + 1));
+                    }
+                }
+            }
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine(FindDublicate("aaabbbcccddd"));
@@ -155,6 +172,7 @@ namespace ProblemSolvingDemoTwo
             Console.WriteLine(GetWorldCount("This Is My Name Md. Rubel"));
             Console.WriteLine(CheckPalindrome("madam"));
             Console.WriteLine(CheckMaxOccuranceOfChar("Hello Wwwwworld!"));
+            GetPossibleSubstring("abcdef");
             Console.WriteLine("Hello World!");
         }
     }
