@@ -48,10 +48,13 @@ namespace ProblemSolvingDemoTwo
         public static string ReverseString(string inputString)
         {
             string result = "";
-            for (int i = inputString.Length-1; i > 0; i--)
-            {
+
+            if (String.IsNullOrEmpty(inputString))
+                return string.Empty;
+
+            for (int i = inputString.Length - 1; i > 0; i--)
                 result += inputString[i];
-            }
+
             return result;
         }
 
