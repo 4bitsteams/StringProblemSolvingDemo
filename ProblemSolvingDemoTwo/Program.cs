@@ -177,6 +177,15 @@ namespace ProblemSolvingDemoTwo
         }
 
 
+        public static void BinarySearchOnstring()
+        {
+            string[] arr = new string[] { "Hi", "Guest", "I", "Mukesh", "Am" };
+            Array.Sort(arr); // Am, Guest, Hi, I, Mukesh 
+            var index = Array.BinarySearch<string>(arr, "Hi");
+            Console.Write("The position of 'Hi' in array is " + index);
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine(FindDublicate("aaabbbcccddd"));
@@ -188,6 +197,7 @@ namespace ProblemSolvingDemoTwo
             Console.WriteLine(CheckMaxOccuranceOfChar("Hello Wwwwworld!"));
             GetPossibleSubstring("abcdef");
             GetFirstCharForEachWord("i love bangladesh");
+            BinarySearchOnstring();
             Console.ReadKey();
         }
     }
