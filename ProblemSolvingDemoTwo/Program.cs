@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ProblemSolvingDemoTwo
@@ -110,6 +111,41 @@ namespace ProblemSolvingDemoTwo
         }
 
 
+        public static char? CheckMaxOccuranceOfChar(string inputSting)
+        {
+            int numOccuranceOfChar = 0;
+            char? occuranceOfChar = null;
+
+            if (string.IsNullOrEmpty(inputSting))
+                return null;
+
+            Dictionary<char, int> numOccurances = new Dictionary<char, int>();
+
+            for (int i = 0; i < inputSting.Length; i++)
+            {
+                if (!numOccurances.ContainsKey(inputSting[i]))
+                {
+                    numOccurances.Add(inputSting[i], 1);
+                }
+                else
+                {
+                    numOccurances[inputSting[i]]++;
+                }
+            }
+
+            foreach (KeyValuePair<char, int> item in numOccurances)
+            {
+                if (item.Value > numOccuranceOfChar)
+                {
+                    occuranceOfChar = item.Key;
+                    numOccuranceOfChar = item.Value;
+                }
+            }
+
+            return occuranceOfChar;
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine(FindDublicate("aaabbbcccddd"));
@@ -118,6 +154,7 @@ namespace ProblemSolvingDemoTwo
             Console.WriteLine(ReverseEachString("This Is My Name"));
             Console.WriteLine(GetWorldCount("This Is My Name Md. Rubel"));
             Console.WriteLine(CheckPalindrome("madam"));
+            Console.WriteLine(CheckMaxOccuranceOfChar("Hello Wwwwworld!"));
             Console.WriteLine("Hello World!");
         }
     }
