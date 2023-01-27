@@ -7,6 +7,10 @@ namespace ProblemSolvingDemoTwo
     class Program
     {
 
+        //Problem Link
+
+        // https://www.c-sharpcorner.com/article/top-c-sharp-string-technical-interview-questions/
+
         public static StringBuilder FindDublicate(string inputString)
         {
             StringBuilder result = new StringBuilder();
